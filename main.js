@@ -11,7 +11,13 @@ const successMessage = document.querySelector(".success-message");
 const numberOne = parseFloat(campo_a.value);
 const numberTwo = parseFloat(campo_b.value);
 
-if (numberTwo < numberOne) {
+
+if (numberTwo == numberOne){
+    errorMessage.innerHTML = 'Os dois números são iguais, tente mudar um deles.';
+    errorMessage.style.display = 'block';
+    successMessage.style.display = 'none';
+} else {
+    if (numberTwo < numberOne) {
     errorMessage.innerHTML = 'O número do campo B deve ser maior que o número do campo A.';
     errorMessage.style.display = 'block';
     successMessage.style.display = 'none';
@@ -24,4 +30,5 @@ if (numberTwo < numberOne) {
     numberOne.value = " ";
     numberTwo.value = " ";
 };
+}
 });
